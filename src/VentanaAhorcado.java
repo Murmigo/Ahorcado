@@ -70,7 +70,7 @@ public class VentanaAhorcado extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("_ _ _ _ _");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 468, 80));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 468, 80));
 
         jButton1.setText("A");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
