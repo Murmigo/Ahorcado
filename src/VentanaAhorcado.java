@@ -70,7 +70,7 @@ public class VentanaAhorcado extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("_ _ _ _ _");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 468, 80));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 468, 80));
 
         jButton1.setText("A");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -79,6 +79,8 @@ public class VentanaAhorcado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 377, 50, 50));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 153));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
