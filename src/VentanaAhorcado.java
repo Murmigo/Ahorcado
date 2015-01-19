@@ -1,4 +1,10 @@
 
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 
 /*
@@ -17,9 +23,50 @@ public class VentanaAhorcado extends javax.swing.JFrame {
     String palabraOculta ="CETYS";
     //contador del numero de fallos
     int numFallos = 0;
+    
+    @Override
+    public void paint (Graphics g)
+    {
+        super.paintComponents(g);
+        
+        g = jPanel1.getGraphics();
+    
+        //cargamos una imagen
+        Image miImagen = null;
+        
+        try {
+            switch(numFallos){
+                case 0:
+                    miImagen =ImageIO.read(getClass().getResource("/ahorcado_0.png"));
+                    break;
+                case 1:
+                     miImagen =ImageIO.read(getClass().getResource("/ahorcado_1.png"));
+                    break;
+                case 2:
+                     miImagen =ImageIO.read(getClass().getResource("/ahorcado_2.png"));
+                    break;
+                 case 3:
+                     miImagen =ImageIO.read(getClass().getResource("/ahorcado_3.png"));
+                    break;
+                case 4:
+                     miImagen =ImageIO.read(getClass().getResource("/ahorcado_4.png"));
+                    break;     
+                case 5:
+                     miImagen =ImageIO.read(getClass().getResource("/ahorcado_5.png"));
+                    break;
+                case -100: miImagen =ImageIO.read(getClass().getResource("/acertasteTodo.png"));break;
+                default:miImagen =ImageIO.read(getClass().getResource("/ahorcado_fin.png"));
+                    break;
+            }
+        } catch (IOException ex) {
+            
+        }
+        g.drawImage(miImagen, 0, 0,jPanel1.getWidth()-5, jPanel1.getHeight()-5, null);
+    }
     /**
      * Creates new form VentanaAhorcado
      */
+    
     public VentanaAhorcado() {
         initComponents();
     }
@@ -45,8 +92,11 @@ public class VentanaAhorcado extends javax.swing.JFrame {
          numFallos++;
          jLabel2.setText(String.valueOf(numFallos));
          
-
+           repaint();
      }
+     //para ver todas las letras q2ue estan descubiertas
+     if(!palabraConGuiones.contains("_"))
+         numFallos = -100;
     }
     
     //recibe el boton que ha sido pulsado
