@@ -92,13 +92,15 @@ public class VentanaAhorcado extends javax.swing.JFrame {
          numFallos++;
          jLabel2.setText(String.valueOf(numFallos));
          
-           repaint();
+
      }
      //para ver todas las letras q2ue estan descubiertas
      if(!palabraConGuiones.contains("_"))
          numFallos = -100;
+     
+     repaint();
     }
-    
+
     //recibe el boton que ha sido pulsado
     private void chequeaBoton(JButton botonPulsado)
     {
